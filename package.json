@@ -1,0 +1,38 @@
+{
+  "name": "message-buffer",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "tests": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "delay": "^2.0.0",
+    "eslint": "^4.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore --ignore tests,node_modules .",
+    "test": "nyc mocha -S --recursive tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Pampattitude@github.com/Pampattitude/node-message-buffer.git"
+  },
+  "author": "Pampattitude",
+  "license": "LGPL",
+  "bugs": {
+    "url": "https://github.com/Pampattitude/node-message-buffer/issues"
+  },
+  "homepage": "https://github.com/Pampattitude/node-message-buffer#readme"
+}
