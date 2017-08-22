@@ -1,4 +1,4 @@
-const defaultConfig = require('./lib/config')
+const defaultConfig = require('./lib/config');
 
 module.exports = class MessageBuffer {
   constructor(options = {maxTime: defaultConfig.maxTime, maxSize: defaultConfig.maxSize}) {
