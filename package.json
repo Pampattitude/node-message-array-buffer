@@ -45,7 +45,7 @@
     "prepublish": "yarn run test && yarn run build",
     "test": "nyc mocha --require ts-node/register \"tests/**/*.{ts,tsx}\""
   },
-  "repository": "git+https://Pampattitude@github.com/Pampattitude/node-message-buffer.git",
+  "repository": "https://github.com/Pampattitude/node-message-array-buffer.git",
   "author": "Pampattitude",
   "license": "LGPL-3.0-or-later",
   "bugs": {
