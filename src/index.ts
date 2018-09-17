@@ -72,3 +72,5 @@ export namespace MessageArrayBuffer {
     maxSize?: number;
   }
 }
+
+export default MessageArrayBuffer;
