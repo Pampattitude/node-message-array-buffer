@@ -41,9 +41,9 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "lint": "tslint -c tslint.json \"**/*.{ts,tsx}\"",
+    "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
     "prepublish": "yarn run test && yarn run build",
-    "test": "nyc mocha --require ts-node/register \"tests/**/*.{ts,tsx}\""
+    "test": "nyc mocha --require ts-node/register \"src/tests/**/*.{ts,tsx}\""
   },
   "repository": "https://github.com/Pampattitude/node-message-array-buffer.git",
   "author": "Pampattitude",
