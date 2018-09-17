@@ -1,12 +1,10 @@
-const chai = require('chai');
-const delay = require('delay');
-const dirtyChai = require('dirty-chai');
+import 'mocha';
 
-const config = require('../lib/config');
-const MessageArrayBuffer = require('../index');
+import { expect } from 'chai';
+import * as delay from 'delay';
 
-const expect = chai.expect;
-chai.use(dirtyChai);
+import config from '../lib/config';
+import { MessageArrayBuffer } from '../index';
 
 describe('MessageArrayBuffer class', () => {
   it('should be set to default configuration', () => {
@@ -33,7 +31,7 @@ describe('MessageArrayBuffer class', () => {
   it('should `push()` a message to the buffer and return `null` with default configuration', () => {
     const mb = new MessageArrayBuffer({maxTime: 1000, maxSize: 1024});
 
-    expect(mb.push({key: 'value'})).to.be.null();
+    expect(mb.push({key: 'value'})).to.be.a('null');
   });
 
   it('should `push()` a message to the buffer and return the whole buffer with `maxSize === 1`', () => {
@@ -45,14 +43,14 @@ describe('MessageArrayBuffer class', () => {
   it('should `push()` two message to the buffer and return the whole buffer with `maxSize === 2`', () => {
     const mb = new MessageArrayBuffer({maxTime: 1000, maxSize: 2});
 
-    expect(mb.push({key1: 'value1'})).to.be.null();
+    expect(mb.push({key1: 'value1'})).to.be.a('null');
     expect(mb.push({key2: 'value2'})).to.have.lengthOf(2);
   });
 
   it('should `push()` a message, wait 10ms, push again and return the whole buffer with `maxSize === 2` and `maxTime === 1`', async () => {
     const mb = new MessageArrayBuffer({maxTime: 1, maxSize: 2});
 
-    expect(mb.push({key1: 'value1'})).to.be.null();
+    expect(mb.push({key1: 'value1'})).to.be.a('null');
     await delay(10);
     expect(mb.push({key2: 'value2'})).to.have.lengthOf(2);
   });
@@ -60,7 +58,7 @@ describe('MessageArrayBuffer class', () => {
   it('should `push()` a message and return `null`, then return the whole buffer with `popAll()` only once', () => {
     const mb = new MessageArrayBuffer({maxTime: 1000, maxSize: 1024});
 
-    expect(mb.push({key: 'value'})).to.be.null();
+    expect(mb.push({key: 'value'})).to.be.a('null');
     expect(mb.popAll()).to.have.lengthOf(1);
     expect(mb.popAll()).to.have.lengthOf(0);
   });
@@ -68,7 +66,7 @@ describe('MessageArrayBuffer class', () => {
   it('should `push()` a message and return `null`, then return the whole buffer with `lookupAll()` more than once', () => {
     const mb = new MessageArrayBuffer({maxTime: 1000, maxSize: 1024});
 
-    expect(mb.push({key: 'value'})).to.be.null();
+    expect(mb.push({key: 'value'})).to.be.a('null');
     expect(mb.lookupAll()).to.have.lengthOf(1);
     expect(mb.lookupAll()).to.have.lengthOf(1);
   });
@@ -92,8 +90,8 @@ describe('MessageArrayBuffer class', () => {
   it('should `push()` a message and return `null`, then return `false` with `isFull()` and `null` with `popAllIfFull()` with `maxSize === 2`', () => {
     const mb = new MessageArrayBuffer({maxTime: 1000, maxSize: 2});
 
-    expect(mb.push({key: 'value'})).to.be.null();
+    expect(mb.push({key: 'value'})).to.be.a('null');
     expect(mb.isFull()).to.be.equal(false);
-    expect(mb.popAllIfFull()).to.be.null();
+    expect(mb.popAllIfFull()).to.be.a('null');
   });
 });
