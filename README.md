@@ -25,7 +25,7 @@ else
 ## JavaScript example
 
 ```
-const Mab = require('message-array-buffer');
+const Mab = require('message-array-buffer').MessageArrayBuffer;
 
 const mab = new Mab({maxTime: 1000 /*ms*/, maxSize: 1024});
 const toPush = mab.push({key: 'value'});
